@@ -14,3 +14,5 @@ gem "rake", "~> 12.3"
 gem "sinatra-activerecord", "~> 2.0"
 
 gem "sqlite3", "~> 1.4"
+
+gem "bcrypt", "~> 3.1"
