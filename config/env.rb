@@ -7,4 +7,8 @@ configure :development do
   set :database, 'sqlite3:db/database.db'
 end
 
+if ENV['SINATRA_ENV'] == 'development'
+  require_relative '../secret.rb'
+end
+
 require_all 'app'
