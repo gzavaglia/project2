@@ -10,5 +10,6 @@ end
 if ENV['SINATRA_ENV'] == 'development'
   require_relative '../secret.rb'
 end
+require_relative '../constant.rb'
 
 require_all 'app'
