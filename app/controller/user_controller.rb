@@ -3,7 +3,11 @@ class UserController < ApplicationController
     erb :'sessions/login'
   end
   
+  post '/login' do 
+    user = User.find_by(username: params[:username])
+  end
+  
   get '/signup' do
-    erb :'sessions/login'
+    erb :'sessions/signup'
   end
 end
