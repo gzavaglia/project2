@@ -1,4 +1,4 @@
-
+source 'https://rubygems.org'
 gem "sinatra", "~> 2.0"
 
 gem "require_all", "~> 1.3"
