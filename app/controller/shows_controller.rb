@@ -18,4 +18,24 @@ class ShowsController < ApplicationController
     @show = Show.find(params[:id])
     erb :'shows/show'
   end
+  
+  get '/shows/:id/edit' do
+    @show = Show.find(params[:id])
+    erb :edit
+  end
+  
+  patch '/shows/:id' do
+    @show = Show.find(params[:id])
+    @show.title = params[:title]
+    @show.seasons = params[:seasons]
+    @show.channel = params[:channel]
+    @show.save
+    redirect to "/shows/#{@show.id}"
+  end
+  
+  delete '/shows/:id' do
+    show = show.find(params[:id])
+    show.delete
+    redirect to '/shows'
+  end
 end
