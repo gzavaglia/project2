@@ -21,7 +21,7 @@ class ShowsController < ApplicationController
   
   get '/shows/:id/edit' do
     @show = Show.find(params[:id])
-    erb :edit
+    erb :'shows/edit'
   end
   
   patch '/shows/:id' do
