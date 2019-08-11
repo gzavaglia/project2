@@ -9,7 +9,7 @@ class UserController < ApplicationController
     if !!user && user.authenticate(params[:password])
       session[:user_id] = user.id
       #erb :'shows/index'
-      redirect '/shows'
+      redirect '/home'
     else 
       @failed = true
       erb :'sessions/login'
@@ -17,16 +17,17 @@ class UserController < ApplicationController
   end
   
   get '/signup' do
-    redirect '/shows' if logged_in?
+    redirect '/home' if logged_in?
     erb :'sessions/signup'
   end
   
   post '/users' do 
     @user = User.create(name: params[:name], username: params[:username], password: params[:password])
-    if user.errors.any?
+    if @user.errors.any?
       erb :'sessions/signup'
     else
-      erb :'/shows'
+      session[:user_id] = @user.id
+      erb :'/home'
     end
   end
 end
