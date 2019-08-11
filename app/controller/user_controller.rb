@@ -17,6 +17,16 @@ class UserController < ApplicationController
   end
   
   get '/signup' do
+    redirect '/shows' if logged_in?
     erb :'sessions/signup'
+  end
+  
+  post '/users' do 
+    @user = User.create(name: params[:name], username: params[:username], password: params[:password])
+    if user.errors.any?
+      erb :'sessions/signup'
+    else
+      erb :'/shows'
+    end
   end
 end
