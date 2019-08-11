@@ -1,0 +1,14 @@
+<form method='POST' action='/shows/<%= @show.id %>'>
+<input id="hidden" type="hidden" name="_method" value="patch">
+<h4>Title: <%= @show.title %></h4>
+<label for "title">Edit:</label>
+<input type="text" id="title" name="title">
+<h4>Seasons: <%= @show.seasons %></h4>
+<label for "seasons">Edit:</label>
+<input type="integer" id="seasons" name="seasons">
+<h4>Channel: <%= @show.cook_time %></h4>
+ <label for "channel">Edit:</label>
+<input type="text" id="channel" name="channel">
+<br /><br />
+<input type="submit" id="submit" value="Save Changes">
+</form>
