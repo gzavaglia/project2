@@ -1,0 +1,8 @@
+<h1><%= @show.title %></h1>
+    <h4>Seasons:</h4>
+    <p><%= @show.seasons %></p>
+    <p><u>Channel:</u> <%= @show.channel %></p>
+    
+  <form action="/shows/<%= @show.id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
