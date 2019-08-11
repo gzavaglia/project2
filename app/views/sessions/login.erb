@@ -5,4 +5,7 @@
   <input id="password" type="password" name="password"><br/><br/>
   
   <input id ="submit" type="submit" value="Log In">
+  <% if @failed %>
+    <p class="wrong">Wrong username or password</p>
+  <% end %>
 </form>

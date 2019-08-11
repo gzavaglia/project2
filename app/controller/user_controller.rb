@@ -1,5 +1,6 @@
 class UserController < ApplicationController
   get '/login' do
+    @failed = false
     erb :'sessions/login'
   end
   
@@ -9,6 +10,7 @@ class UserController < ApplicationController
       session[:user_id] = user.id
       erb :'shows/index'
     else 
+      @failed = true
       erb :'sessions/login'
     end 
   end
