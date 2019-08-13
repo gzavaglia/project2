@@ -12,7 +12,7 @@ class ShowsController < ApplicationController
   post '/shows' do
     authenticate
     cu = current_user
-    cu.shows.build(content: params[:content])
+    cu.shows.build(params)
     if cu.save
      redirect to "/shows/#{@show.id}"
     else
