@@ -1,7 +1,9 @@
 class ShowsController < ApplicationController
   get '/shows' do
    authenticate
-   @shows = Show.all 
+   cu = current_user
+   #@shows = Show.all 
+   @shows = cu.shows
    erb :'shows/index'
   end
   
