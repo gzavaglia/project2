@@ -14,7 +14,8 @@ class ShowsController < ApplicationController
     cu = current_user
     cu.shows.build(params)
     if cu.save
-     redirect to "/shows/#{@show.id}"
+     #redirect to "/shows/#{@show.id}"
+     redirect to "/shows"
     else
       @error_message 
       erb :'shows/new'
