@@ -1,8 +1,7 @@
-<a href="/shows/new">Add a new Show</a>
-
+<html>
 <% @shows.each do |show| %>
 <ul>
-  <li><a href="/shows/<%= "#{show.id}" %>"> <%= "#{show.id} - #{show.title}" %> </a> </li>
+  <li><a href="/shows/<%= "#{show.id}" %>"> <%= "#{show.title}" %> </a> </li>
 </ul>
 <% end %>
-
+</html>

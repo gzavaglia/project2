@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h1>Sinatra Project</h1>
+    <h1 style="font-family:verdana; color:#090086" ><center>Binge God</h1></center>
+    <h3 style="font-family:verdana; color:#090086"><center>Your #1 management source for your TV shows!</center></h3>
     <% if logged_in? %>
-      <a href="/shows">Shows</a>
+      <center><a href="/shows">Your Shows</a></center>
+      <center><a href="/shows/new">Add a new Show</a></center>
+      
     <% end %>
     <%= yield %>
     <% if logged_in? %>
-      <a href="/logout">Log Out</a>
+      <center><a href="/logout">Log Out</a></center>
     <% end %>
   </body>
 </html>
