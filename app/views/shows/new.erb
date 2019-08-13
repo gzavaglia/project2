@@ -1,4 +1,9 @@
 <html>
+  <% if !!@error_message %>
+    <p class="wrong">There was an error while trying to create your show, please try again</p>
+  <% end %>
+  
+  
 <form method="POST" action="/shows">
   <label for "title">Title: </label>
   <input type="text" id="title" name="title">

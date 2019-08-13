@@ -10,8 +10,17 @@ class ShowsController < ApplicationController
   end
   
   post '/shows' do
-    @show = Show.create(params)
-    redirect to "/shows/#{@show.id}"
+    authenticate
+    cu = current_user
+    cu.shows.build(content: params[:content])
+    if cu.save
+     redirect to "/shows/#{@show.id}"
+    else
+      @error_message 
+      erb :'shows/new'
+    end
+    #@show = Show.create(params)
+    
   end
   
   get '/shows/:id' do
