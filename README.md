@@ -33,3 +33,11 @@ This app is avaliable to:
 - Done? Try logging out! 
 
 Try doing all of this things!
+
+### Built With
+- ActiveRecord
+- Sinatra
+- VS Code
+
+### Author
+Gio Zavaglia
