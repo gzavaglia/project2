@@ -26,6 +26,7 @@ class UserController < ApplicationController
     if @user.errors.any?
       erb :'sessions/signup'
     else
+      @user.save
       session[:user_id] = @user.id
       erb :'/home'
     end
