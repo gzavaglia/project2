@@ -1,4 +1,4 @@
-<html>
+
   <% if !!@error_message %>
     <p class="wrong">There was an error while trying to create your show, please try again</p>
   <% end %>
@@ -7,20 +7,15 @@
 
 
 <form method="POST" action="/shows">
-  <p style="font-family:verdana; color:#090086"><label for "title">Title: </label></p>
+  <p><label for "title">Title: </label></p>
   <input type="text" id="title" name="title">
   <br />
-  <p style="font-family:verdana; color:#090086"><label for "seasons">Seasons: </label></p>
+  <p><label for "seasons">Seasons: </label></p>
   <input type="integer" id="seasons" name="seasons">
   <br />
-   <p style="font-family:verdana; color:#090086"><label for "channel">Channel: </label></p>
+   <p><label for "channel">Channel: </label></p>
   <input type="text" id="channel" name="channel">
   <br /><br/>
   <input type="submit" id="submit" value="Submit">
 </form>
 
-<style>
-	html{
-    background-color: pink
-    }
-</style>

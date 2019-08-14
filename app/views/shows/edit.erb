@@ -1,20 +1,15 @@
 <form method='POST' action='/shows/<%= @show.id %>'>
 <input id="hidden" type="hidden" name="_method" value="patch">
-<h4 style="font-family:verdana; color:#090086">Title: <%= @show.title %></h4>
-<p style="font-family:verdana; color:red"><label for "title">Edit:</label></p>
+<h4>Title: <%= @show.title %></h4>
+<p><label for "title">Edit:</label></p>
 <input type="text" id="title" name="title">
-<h4 style="font-family:verdana; color:#090086">Seasons: <%= @show.seasons %></h4>
-<p style="font-family:verdana; color:red"><label for "seasons">Edit:</label></p>
+<h4>Seasons: <%= @show.seasons %></h4>
+<p><label for "seasons">Edit:</label></p>
 <input type="integer" id="seasons" name="seasons">
-<h4 style="font-family:verdana; color:#090086">Channel: <%= @show.channel %></h4>
-<p style="font-family:verdana; color:red"><label for "channel">Edit:</label></p>
+<h4>Channel: <%= @show.channel %></h4>
+<p><label for "channel">Edit:</label></p>
 <input type="text" id="channel" name="channel">
 <br /><br />
 <input type="submit" id="submit" value="Save Changes">
 </form>
 
-<style>
-	html{
-    background-color: pink
-    }
-</style>
