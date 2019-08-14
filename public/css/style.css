@@ -1,6 +1,11 @@
 html{
   background-color: #BEFAFE;
+  font-family: 'Asap', sans-serif;
 }
 .wrong{
   color: red;
+}
+
+.logo{
+  font-family: 'Monoton', cursive;
 }
