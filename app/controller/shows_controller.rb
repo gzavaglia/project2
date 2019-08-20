@@ -34,6 +34,7 @@ class ShowsController < ApplicationController
   get '/shows/:id' do
     authenticate
     @show = Show.find(params[:id])
+    authorized?(@show)
     erb :'shows/show'
   end
   
@@ -58,6 +59,7 @@ class ShowsController < ApplicationController
   delete '/shows/:id/delete' do
     authenticate
     show = Show.find(params[:id])
+    authorized?(show)
     show.delete
     redirect to '/shows'
   end
