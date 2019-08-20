@@ -40,11 +40,14 @@ class ShowsController < ApplicationController
   get '/shows/:id/edit' do
     authenticate
     @show = Show.find(params[:id])
+    authorized?(@show)
     erb :'shows/edit'
   end
   
   patch '/shows/:id' do
-    @show = Show.find(params[:id])
+    authenticate
+    @show = Show.find_by(params[:id])
+    authorized?(@show)
     @show.title = params[:title]
     @show.seasons = params[:seasons]
     @show.channel = params[:channel]

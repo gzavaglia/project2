@@ -31,6 +31,12 @@ class ApplicationController < Sinatra::Base
       end
     end
     
+    def authorized?(stuff)
+      if current_user != stuff.user 
+        redirect '/home'
+      end
+    end
+    
   end
   
 end
