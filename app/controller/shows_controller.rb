@@ -45,7 +45,7 @@ class ShowsController < ApplicationController
     redirect to "/shows/#{@show.id}"
   end
   
-  delete '/shows/:id' do
+  delete '/shows/:id/delete' do
     show = Show.find(params[:id])
     show.delete
     redirect to '/shows'
