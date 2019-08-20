@@ -32,11 +32,13 @@ class ShowsController < ApplicationController
   end
   
   get '/shows/:id' do
+    authenticate
     @show = Show.find(params[:id])
     erb :'shows/show'
   end
   
   get '/shows/:id/edit' do
+    authenticate
     @show = Show.find(params[:id])
     erb :'shows/edit'
   end
