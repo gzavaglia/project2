@@ -2,9 +2,6 @@
   <% if !!@error_message %>
     <p class="wrong">There was an error while trying to create your show, please try again</p>
   <% end %>
-  
-  
-
 
 <form method="POST" action="/shows">
   <p><label for "title">Title: </label></p>
@@ -18,4 +15,8 @@
   <br /><br/>
   <input type="submit" id="submit" value="Submit">
 </form>
+
+  <% if !!@blank_error %>
+    <p class="wrong">You can't leave stuff blank, please try again</p>
+  <% end %>
 

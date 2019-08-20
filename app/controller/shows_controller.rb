@@ -15,12 +15,17 @@ class ShowsController < ApplicationController
     authenticate
     cu = current_user
     cu.shows.build(params)
-    if cu.save
-     #redirect to "/shows/#{@show.id}"
-     redirect to "/shows"
-    else
-      @error_message 
+    @blank_error = false
+    if params[:title].empty? || params[:channel].empty? || params[:seasons].empty?
+      @blank_error = true
       erb :'shows/new'
+    else 
+      if cu.save
+       redirect to "/shows"
+      else
+        @error_message 
+        erb :'shows/new'
+      end
     end
     #@show = Show.create(params)
     
