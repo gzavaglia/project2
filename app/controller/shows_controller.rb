@@ -53,6 +53,7 @@ class ShowsController < ApplicationController
   end
   
   delete '/shows/:id/delete' do
+    authenticate
     show = Show.find(params[:id])
     show.delete
     redirect to '/shows'
