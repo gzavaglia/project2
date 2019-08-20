@@ -9,6 +9,9 @@
   <form action="/shows/<%= @show.id %>/delete" method="post">
   <input id="hidden" type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete">
+  
+  <% else %>
+  <p class="wrong"> This is not your show... Sorry but you can't edit or delete it... Oops! </p>
   <% end %> 
   
   
