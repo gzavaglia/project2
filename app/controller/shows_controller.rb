@@ -36,6 +36,8 @@ class ShowsController < ApplicationController
     @show = Show.find(params[:id])
     authorized?(@show)
     erb :'shows/show'
+    rescue ActiveRecord::RecordNotFound
+     redirect to "/shows"
   end
   
   get '/shows/:id/edit' do
@@ -43,6 +45,8 @@ class ShowsController < ApplicationController
     @show = Show.find(params[:id])
     authorized?(@show)
     erb :'shows/edit'
+    rescue ActiveRecord::RecordNotFound
+     redirect to "/shows"
   end
   
   patch '/shows/:id' do
