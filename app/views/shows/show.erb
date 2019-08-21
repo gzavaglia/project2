@@ -5,6 +5,7 @@
   <p><%= @show.channel %></p>
   <% if @show.user == current_user %>
   <p><a href="/shows/<%= @show.id %>/edit">Edit</a></p> <br/>
+  <p><a href="/shows/<%= @show.id %>/users">See Users</a></p> <br/>
     
   <form action="/shows/<%= @show.id %>/delete" method="post">
   <input id="hidden" type="hidden" name="_method" value="delete">

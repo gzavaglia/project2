@@ -1,4 +1,3 @@
-<!--<% #if @show.user == current_user %>-->
 <form method='POST' action='/shows/<%= @show.id %>'>
 <input id="hidden" type="hidden" name="_method" value="patch">
 <h4>Title: <%= @show.title %></h4>
@@ -13,7 +12,5 @@
 <br /><br />
 <input type="submit" id="submit" value="Save Changes">
 </form>
-<!--<% #else %>-->
-<!--<p class="wrong"> This is not your show... Sorry but you can't edit or delete it... Oops! </p>-->
-<!--<% #end %> -->
+
 

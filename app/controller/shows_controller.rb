@@ -47,13 +47,18 @@ class ShowsController < ApplicationController
   
   patch '/shows/:id' do
     authenticate
-    @show = Show.find_by(params[:id])
+    @show = Show.find(params[:id])
     authorized?(@show)
     @show.title = params[:title]
     @show.seasons = params[:seasons]
     @show.channel = params[:channel]
-    @show.save
-    redirect to "/shows/#{@show.id}"
+    if @show.save 
+      redirect to "/shows/#{@show.id}"
+    else
+      return @error_message
+    end
+
+    #redirect to "/shows/#{@show.id}"
   end
   
   delete '/shows/:id/delete' do
@@ -63,4 +68,14 @@ class ShowsController < ApplicationController
     show.delete
     redirect to '/shows'
   end
+
+  get '/shows/:id/users' do 
+    show = Show.find(params[:id])
+    users = User.all 
+    @user_shows = users.select do |user|
+     user.shows.any?{|show1| show1.title == show.title }
+    end
+    erb :'shows/users'
+  end
+
 end
