@@ -23,11 +23,11 @@ class ShowsController < ApplicationController
       if cu.save
        redirect to "/shows"
       else
-        @error_message 
-        erb :'shows/new'
+        # @error_message 
+        # erb :'shows/new'
+        erb :'/shows/error'
       end
     end
-    #@show = Show.create(params)
     
   end
   
@@ -59,7 +59,7 @@ class ShowsController < ApplicationController
     if @show.save 
       redirect to "/shows/#{@show.id}"
     else
-      return @error_message
+      erb :'/shows/error'
     end
 
     #redirect to "/shows/#{@show.id}"
