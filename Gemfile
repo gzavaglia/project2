@@ -7,7 +7,7 @@ gem "shotgun", "~> 0.9.2"
 
 gem "pry", "~> 0.12.2"
 
-gem "activerecord", "~> 5.2"
+gem "activerecord", "~> 6.1"
 
 gem "rake", "~> 12.3"
 
